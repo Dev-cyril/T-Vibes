@@ -7,12 +7,15 @@
     <title>login</title>
 </head>
 <body>
-    <form action="login" method="post">
+    
+    
+    <form action="" method="post">
+        {% csrf_token %}
         <label for="">username</label>
         <input type="text" id="user" name="user" required>
 
         <label for="">password</label>
-        <input type="password" id="pass" name="pass" required>
+        <input type="password" id="password1" name="passord1" required>
 
     <button type="submit">Login</button>
     </form>

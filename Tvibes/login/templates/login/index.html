@@ -7,9 +7,29 @@
     <title>T-Vibes</title>
 </head>
 <body>
+
+    {%for message in message%}
+
+    <div class="alert alaert- {{message.tags}} alaert dimissible fade show" role="alaert">
+
+        <strong>message:</strong>{{message}}
+        <button type="button" class="close" data-dimiss="alert" aria-label="close"></button>
+        <span aria-hidden="true">times;</span>
+    </div>
+    
+    {% endfor %}
+
+    {%if user.is_authticated%}
+
+    <h3>Hello{{fname}}</h3>
+    <h4>Your have successfully logged in</h4>
+    <button type="submit"><a href="/logout.html">Logout</a> </button>
+    {% else %}
     <h2>Welcome to T-Vibes - Your home of Music</h2>
     <button type="submit"> <a href="/createaccount.html">Create account</a> </button>
     <button type="submit"><a href="/login.html">Login</a> </button>
-    <button type="submit"><a href="/logout.html">Logout</a> </button>
+    
+
+    <!-- {%endif%} -->
 </body>
 </html>
