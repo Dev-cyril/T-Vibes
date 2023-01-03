@@ -8,28 +8,31 @@
 </head>
 <body>
 
-    {%for message in message%}
+    {%for message in messages%}
 
-    <div class="alert alaert- {{message.tags}} alaert dimissible fade show" role="alaert">
+    <div class="alert alert- {{message.tags}} alaert dismissible fade show" role="alert">
 
         <strong>message:</strong>{{message}}
-        <button type="button" class="close" data-dimiss="alert" aria-label="close"></button>
-        <span aria-hidden="true">times;</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     
     {% endfor %}
 
-    {%if user.is_authticated%}
+    {%if user.is_authenticated%}
 
-    <h3>Hello{{fname}}</h3>
-    <h4>Your have successfully logged in</h4>
-    <button type="submit"><a href="/logout.html">Logout</a> </button>
+    <h3>Hello {{ fname }}</h3>
+    <h4>You have successfully logged in</h4>
+    <button type="submit"><a href="signout.html">Signout</a></button>
+
     {% else %}
+
     <h2>Welcome to T-Vibes - Your home of Music</h2>
-    <button type="submit"> <a href="/createaccount.html">Create account</a> </button>
-    <button type="submit"><a href="/login.html">Login</a> </button>
+    <button type="submit"> <a href="createaccount.html">Create account</a> </button>
+    <button type="submit"><a href="login.html">Login</a></button>
     
 
-    <!-- {%endif%} -->
+    {%endif%}
 </body>
 </html>
