@@ -7,6 +7,19 @@
     <title>Account</title>
 </head>
 <body>
+
+    {%for message in messages%}
+
+    <div class="alert alert- {{message.tags}} alaert dismissible fade show" role="alert">
+
+        <strong>message:</strong>{{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+    {% endfor %}
+    
     <h1>Create account</h1>
 
     <form action="" method="post"> 
@@ -28,7 +41,7 @@
         <input type="email" id="email" name="email" placeholder="enter email" required>
         <br>
 
-        <label for="psd">Password</label>
+        <label for="">Password</label>
         <input type="password" id="password1" name="password1" placeholder="input password" required>
         <br>
 
