@@ -6,6 +6,7 @@ from django.contrib import admin
 urlpatterns = [
     path('', views.home, name="home"),
     path('createaccount.html', views.createaccount, name="createaccount"),
-    path('login.html', views.login, name="login"),
+    path('signin.html', views.signin, name="signin"),
     path('signout.html', views.signout, name="signout"),
+    # path('activate/<uidb64>/<token>', views.activate, name="activate"),
 ]
