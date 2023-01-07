@@ -1,5 +1,5 @@
 import React from 'react'
-import Page from './pages/Landing_page'
+import Page from './pages/Dashboard'
 import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,

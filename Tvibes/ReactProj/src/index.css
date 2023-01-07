@@ -7,21 +7,34 @@ body, html{
   font-style: normal;
 }
 
-#play {
-  background-color: lightgreen;
-
-  /* Smoothly transition the background color */
-  transition: background-color .5s;
+#head{
+  padding: 20px;
 }
-
-/* Using flex with the column direction to
-align items in a vertical direction */
-.player {
+#music{
+  display: flex;
+  background-color: rgb(46, 95, 67);
+}
+#streamed, #recc{
+  width: 50%;
+}
+ol>div {
+  background-color: rgba(118, 221, 195, 0.37);
+  width: 90%;
+  padding: 20px;
+  border-radius: 7px;
+}
+ol > div:hover{
+  cursor: pointer;
+  background-color: rgb(5, 53, 41);
+}
+#play {
   height: 95vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
 
 #details {
@@ -30,6 +43,7 @@ align items in a vertical direction */
   flex-direction: column;
   justify-content: center;
   margin-top: 25px;
+  padding-top: 30px;
 }
 
 #track-art {
@@ -47,27 +61,30 @@ align items in a vertical direction */
   font-size: 1rem;
 }
 
-#track-name {
+#trackname {
   font-size: 3rem;
 }
 
 #track-artist {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /* Using flex with the row direction to
 align items in a horizontal direction */
 #buttons {
+  width: 30%;
   display: flex;
-  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
+  margin: 10px;
 }
 
 #playpause-track,
 #prev-track,
 #next-track {
-  padding: 25px;
-  opacity: 0.8;
+  width: 70px;
+  height: 70px;
+  opacity: 0.6;
 
   /* Smoothly transition the opacity */
   transition: opacity .2s;
@@ -79,11 +96,15 @@ align items in a horizontal direction */
 #next-track:hover {
   opacity: 1.0;
 }
-
+#playpause-track > img,
+#prev-track > img,
+#next-track > img{
+  width: 30%;
+  height: 30%;
+}
 /* Define the slider width so that it scales properly */
 #slider_container {
   width: 75%;
-  max-width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,10 +140,30 @@ align items in a horizontal direction */
 }
 
 #seek_slider {
-  width: 60%;
+  width: 40%;
 }
 
 #current-time,
 #total-duration {
   padding: 10px;
+}
+
+@media (max-width: 500px) {
+  #music{
+    flex-direction: column;
+  }
+  #now-playing {
+    font-size: 1rem;
+  }
+
+  #trackname {
+    font-size: 2rem;
+  }
+
+  #track-artist {
+    font-size: 1rem;
+  }
+  #streamed, #recc{
+    width: 90%;
+  }
 }
