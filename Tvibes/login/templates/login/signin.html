@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+</head>
+<body>
+
+    {%for message in messages%}
+
+    <div class="alert alert- {{message.tags}} alert dismissible fade show" role="alert">
+
+        <strong>message:</strong>{{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+    {% endfor %}
+
+    
+    
+    
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <h1>Signin Page</h1>
+        <label for="">username</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="">password</label>
+        <input type="password" id="password1" name="password1" required><br>
+
+    <button type="submit">Signin</button>
+    </form>
+
+
+
+</body>
+</html>
