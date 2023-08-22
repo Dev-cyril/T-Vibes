@@ -1,0 +1,48 @@
+@import '../variables/varibles.scss';
+.sect{
+    display: flex;
+    padding: 15px;
+    nav{
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        padding: 15px 25px;
+        .logo-container{
+            margin-bottom: 20px;
+        }
+        .div{
+            height: 77px;
+            display: flex;
+            gap: 5px;
+            color: #000;
+            font-weight: 500;
+            img{
+                width: 50px;
+            }
+        }
+        .active{
+            background-color: $nav-divs-bg;
+            border-right: 8px solid $nav-divs-bg-border;
+        }
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 25px 5px 15px;
+            .profile{
+                display: flex;
+                gap: 8px;
+                img{
+                    border-radius: 50%;
+                    width: 70px;
+                    width: 70px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.sect {
+  display: flex;
+  padding: 15px;
+}
+.sect nav {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  padding: 15px 25px;
+}
+.sect nav .logo-container {
+  margin-bottom: 20px;
+}
+.sect nav .div {
+  height: 77px;
+  display: flex;
+  gap: 5px;
+  color: #000;
+  font-weight: 500;
+}
+.sect nav .div img {
+  width: 50px;
+}
+.sect nav .active {
+  background-color: rgb(203, 223, 214);
+  border-right: 8px solid rgb(79, 109, 94);
+}
+.sect .container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sect .container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px 5px 15px;
+}
+.sect .container .header .profile {
+  display: flex;
+  gap: 8px;
+}
+.sect .container .header .profile img {
+  border-radius: 50%;
+  width: 70px;
+  width: 70px;
+}/*# sourceMappingURL=dashboard.css.map */

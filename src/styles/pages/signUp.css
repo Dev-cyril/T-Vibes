@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body,
+html {
+  border: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.sect {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  padding: 15px 5px 15px 15px;
+  border-radius: 10px;
+  margin: 40px auto;
+  box-shadow: -1px 1px 5px 5px rgba(128, 128, 128, 0.575);
+}
+
+aside {
+  background-image: url(../../assets/bg-sidebar-desktop.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 10px 0 0 10px;
+  font-size: 13px;
+  border-radius: 15px;
+}
+
+.div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 20px;
+  height: 50px;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  color: white;
+}
+
+h3 {
+  color: rgba(87, 84, 84, 0.842);
+}
+
+span {
+  color: white;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.back-button {
+  cursor: pointer;
+  width: 50%;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.next-button,
+.finish-button {
+  width: 100px;
+  height: 50px;
+  border: 0;
+  text-align: center;
+  color: rgba(240, 255, 255, 0.733);
+}
+
+.finish-button {
+  background-color: rgb(26, 100, 236);
+  color: white;
+}
+
+.next-button:hover {
+  background-color: rgba(2, 2, 82, 0.753);
+}
+
+.finish-button:hover {
+  background-color: rgba(8, 81, 216, 0.705);
+}
+
+button:disabled:hover {
+  cursor: not-allowed;
+  background-color: rgba(47, 47, 165, 0.26);
+}
+
+.active {
+  background-color: rgba(127, 255, 212, 0.808);
+}
+
+@media (max-width: 767px) {
+  .sect {
+    width: 100%;
+    box-shadow: none;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(145, 221, 224, 0.281);
+  }
+
+  aside {
+    background-image: url(../../assets/bg-sidebar-mobile.svg);
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 150px;
+    gap: 20px;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .div div:last-child {
+    display: none;
+  }
+}
+.details {
+  width: 100%;
+  margin: 25px auto;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 80%;
+  margin: auto;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+label {
+  margin: 5px 0 10px;
+}
+
+input {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding-left: 10px;
+  height: 40px;
+  box-shadow: 0.5px 0.5px 2px 3px rgba(128, 128, 128, 0.123);
+}
+
+input:focus {
+  outline: none;
+}
+
+/* Form group
+============================= */
+
+.form-group {
+  padding: 1rem;
+  margin: 0;
+}
+
+.form-group:focus-within {
+  transition: 0.3s;
+}
+
+.form-field-container {
+  position: relative;
+}
+
+.form-field-icon {
+  font-style: normal;
+}
+
+/* Form help
+============================= */
+
+.form-group .form-help {
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0.019rem;
+  color: red;
+  font-size: medium;
+}
+
+.form-group:focus-within .form-help {
+  max-height: 20rem;
+  margin: 0.4rem 0 0;
+}
+
+input:not(:placeholder-shown)~.form-field-icon::after {
+  height: 100%;
+  right: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 1.3em;
+}
+
+/* Because inputs are invalid by default, we need to be careful and show the icon when we are not in focus and when when the input is not empty (placeholder-shown). Careful with this one because it is not supported everywhere. */
+
+input:required:invalid:not(:focus):not(:placeholder-shown)~.form-field-icon::after,
+.invalid:required:valid:not(:focus):not(:placeholder-shown)~.form-field-icon::after {
+  content: '✘';
+  color: rgba(255, 0, 0, 0.514);
+}
+
+input:required:valid~.form-field-icon::after {
+  content: '✔';
+  color: rgba(4, 59, 8, 0.877);
+}
+
+/* Showing a border in a different color is good but not enough. For accessibility purposes, we added an icon when the input is valid or invalid to have a visual distinction that is not only color based.*/
+
+input:required:invalid:not(:focus):not(:placeholder-shown),
+.invalid:required:valid:not(:focus):not(:placeholder-shown) {
+  border: 0.1rem solid rgba(255, 0, 0, 0.514);
+}
+
+input:required:valid:not(:placeholder-shown) {
+  border: 0.1rem solid rgba(12, 1, 12, 0.418);
+}
+
+button {
+  background-color: rgb(2, 2, 82);
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: rgb(17, 17, 134);
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .details {
+    width: 90%;
+    background-color: #fff;
+    border-radius: 15px;
+    height: fit-content;
+    margin-top: -150px;
+    z-index: 1;
+  }
+
+  .info {
+    width: 95%;
+  }
+}
+
+@media (max-width: 767px) {
+  .details {
+    margin-top: -100px;
+  }
+}
