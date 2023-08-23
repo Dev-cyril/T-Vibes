@@ -8,9 +8,10 @@ import SignUp from '../pages/signup/SignUp';
 import SetPreference from '../pages/signup/SetPreference';
 import PersonalInfo from '../pages/signup/PersonalInfo';
 import FinishUp from '../pages/signup/Finish';
+import Success from '../pages/signup/success';
 
 export const AppContext = createContext()
-const signUpComponents = [PersonalInfo, SetPreference, FinishUp]
+const signUpComponents = [PersonalInfo, SetPreference, FinishUp, Success]
 
 export default function Context() {
   const [activeIndex, setActiveIndex] = useState(0);

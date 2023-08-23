@@ -3,7 +3,7 @@ import '../../styles/pages/signUp.css';
 import { AppContext } from '../../context/context';
 
 export default function SignUp ({ components }) {
-  const { isButtonDisabled, activeIndex, setActiveIndex} = useContext(AppContext)
+  const { isButtonDisabled, activeIndex, setActiveIndex, inputValues} = useContext(AppContext)
   const ActiveComponent = components[activeIndex];
 
   useEffect(() => {
@@ -19,6 +19,27 @@ export default function SignUp ({ components }) {
   const previous = () => {
     setActiveIndex(prevIndex => prevIndex - 1);
   };
+
+  const finish = async() => {
+    const url = 'https://tvibes.onrender.com/api/signup/'
+    const signUpRequest = inputValues
+    const params = {
+      method: 'POST',
+      body: JSON.stringify(signUpRequest)
+    }
+    
+    try{
+      const response = await fetch(url, params);
+      if (response.token){
+          setAuthenticated(true)
+          next()
+          // navigate('/dashboard')
+      }
+    }
+    catch(err){
+      alert(err)
+    }
+  }
 
   return (
       <div className='sect'>
@@ -54,7 +75,7 @@ export default function SignUp ({ components }) {
                       Next step
                     </button>
                   ) : (
-                    <button disabled={isButtonDisabled} className="finish-button" onClick={next}>
+                    <button disabled={isButtonDisabled} className="finish-button" onClick={finish}>
                       Confirm
                     </button>
                   )}

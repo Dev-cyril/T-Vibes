@@ -17,7 +17,7 @@ function FinishUp() {
         <div className="container-finish">
           <div>
             <h3>Personal Information</h3>
-            <p onClick={change} style={{cursor: 'pointer'}}>Change</p>
+            <small onClick={change} style={{cursor: 'pointer'}}>Change</small>
             {
               Object.keys(inputValues).map((key) => (
                 inputValues[key] !== 'password' || 'confirm_password' ? 
